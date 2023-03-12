@@ -5,9 +5,12 @@ const {
     removeUser,
     updateUser
 } = require("../repositories/user");
+const bcrypt = require("bcrypt");
 
 exports.create = async (req, res) => {
     try {
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
+        
         const user = await createUser(req.body);
         res.status(200).send(user);
     } catch (e) {
