@@ -6,12 +6,14 @@ const {
     updateUser
 } = require("../repositories/user");
 const bcrypt = require("bcrypt");
+const { userValidation } = require("../validations/user");
 
 exports.create = async (req, res) => {
     try {
+        const data = await userValidation.parse(req.body);
         req.body.password = bcrypt.hashSync(req.body.password, 10);
-        
-        const user = await createUser(req.body);
+
+        const user = await createUser(data);
         res.status(200).send(user);
     } catch (e) {
         res.status(400).send(e);
