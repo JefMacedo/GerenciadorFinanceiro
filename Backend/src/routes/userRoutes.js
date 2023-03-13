@@ -4,8 +4,8 @@ const {
     getId,
     remove,
     update
-} = require("../controllers/user");
-const { verifyToken } = require("../middlewares/auth");
+} = require("../controllers/userController");
+const { verifyToken } = require("../middlewares/authMiddleware");
 
 exports.userRoutes = app => {
     app.post("/user", create);

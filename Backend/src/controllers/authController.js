@@ -1,7 +1,7 @@
-const { getUser } = require("../repositories/auth");
+const { getUser } = require("../repositories/authRepository");
+const { authValidation } = require("../validations/authValidation");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { authValidation } = require("../validations/auth");
 
 exports.login = async (req, res) => {
     try {

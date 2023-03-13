@@ -4,9 +4,9 @@ const {
     getUsers,
     removeUser,
     updateUser
-} = require("../repositories/user");
+} = require("../repositories/userRepository");
+const { userValidation } = require("../validations/userValidation");
 const bcrypt = require("bcrypt");
-const { userValidation } = require("../validations/user");
 
 exports.create = async (req, res) => {
     try {
