@@ -1,4 +1,4 @@
-const { prisma } = require("../services/prisma");
+const { prisma } = require("../services/prismaService");
 
 exports.getUser = async (email) => {
     const user = await prisma.user.findUnique({
