@@ -1,4 +1,4 @@
-const InputComponent = ({label, placeholder, value, onChange, type}) => {
+const InputComponent = ({ label, placeholder, value, onChange, type, required }) => {
     return (
         <>
             <label className="form-label">{label}</label>
@@ -8,6 +8,7 @@ const InputComponent = ({label, placeholder, value, onChange, type}) => {
                 value={value}
                 onChange={onChange}
                 type={type}
+                required={required}
             />
         </>
     );
