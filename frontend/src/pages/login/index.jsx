@@ -1,6 +1,6 @@
-import { 
-    Main, 
-    Body, 
+import {
+    Main,
+    Body,
     Logo,
     Spacing,
     CreateAcc
@@ -14,13 +14,23 @@ const Login = () => {
         <Main>
             <Body>
                 <Logo>Gerenciador Financeiro</Logo>
-                <Input label="Email" placeholder="Digite o email" />
+                <Input
+                    label="Email"
+                    placeholder="Digite o email"
+                />
                 <Spacing />
-                <Input label="Senha" placeholder="Digite a senha" type="Password" />
+                <Input
+                    label="Senha"
+                    placeholder="Digite a senha"
+                    type="Password"
+                />
                 <Spacing />
-                <Button label="Entrar" variant="btn-primary" />
+                <Button
+                    label="Entrar"
+                    variant="btn-primary"
+                />
                 <Spacing />
-                <CreateAcc onClick={()=> navigate("/register")}>Criar uma conta</CreateAcc>
+                <CreateAcc onClick={() => navigate("/register")}>Criar uma conta</CreateAcc>
             </Body>
         </Main>
     );
